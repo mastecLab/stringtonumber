@@ -1,0 +1,103 @@
+[
+    {
+        "id": "59b9babb9193cf46",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e2b8a1a4b71639a1",
+        "type": "inject",
+        "z": "59b9babb9193cf46",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "v": "123456",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "123456",
+        "payloadType": "str",
+        "x": 450,
+        "y": 400,
+        "wires": [
+            [
+                "61cb8da820f3358d",
+                "f170487589b80da5"
+            ]
+        ]
+    },
+    {
+        "id": "45a41bb122036baa",
+        "type": "debug",
+        "z": "59b9babb9193cf46",
+        "name": "After change node",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 970,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "61cb8da820f3358d",
+        "type": "debug",
+        "z": "59b9babb9193cf46",
+        "name": "After inject",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "f170487589b80da5",
+        "type": "change",
+        "z": "59b9babb9193cf46",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(payload)\t",
+                "tot": "jsonata",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 400,
+        "wires": [
+            [
+                "45a41bb122036baa"
+            ]
+        ]
+    }
+]
